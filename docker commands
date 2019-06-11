@@ -1,0 +1,32 @@
+Commands: 
+
+docker --version
+docker ps --> list running containers
+
+docker ps -a --> List All containers which are even stopped....
+
+docker images  --> list of docker images...
+
+
+docker run -d -p 8080:80 -p 8082:443 dockersamples/static-site
+where 8080 is host port
+where 80 --> container port...So to access the static application type http://localhost:8080
+
+Basically when you run the docker with "docker run -d -p 8080:80 -p 8082:443 dockersamples/static-site", this acts like a 
+temp storage...means the data will be deleted once the docker gets stopped....
+
+Run the docker with mounting the volume.... 
+
+
+To stop the docker 
+
+docker stop
+
+to delete the docker 
+
+docker delete 
+
+
+
+
+
