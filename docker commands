@@ -9,6 +9,13 @@ docker images  --> list of docker images...
 
 For more examples to get more sample, type "dockersamples" in dockerhub search area...
 
+
+docker pull dockersamples/static-site
+
+what is the diffrences between docker run vs docker pull??
+
+Ans : Docker pull will only fetch the image. but docker run will search locally, if nor found locally  then search , fetch the images & run the images. 
+
 C:\Users\kumar>docker run dockersamples/static-site
 Unable to find image 'dockersamples/static-site:latest' locally
 latest: Pulling from dockersamples/static-site
