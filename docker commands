@@ -14,7 +14,8 @@ docker pull dockersamples/static-site
 
 what is the diffrences between docker run vs docker pull??
 
-Ans : Docker pull will only fetch the image. but docker run will search locally, if nor found locally  then search , fetch the images & run the images. 
+Ans : Docker pull will only fetch the image. but docker run will search locally, if nor found locally  then search , fetch the 
+images from docker hub & run the images. 
 
 C:\Users\kumar>docker run dockersamples/static-site
 Unable to find image 'dockersamples/static-site:latest' locally
