@@ -7,13 +7,38 @@ docker ps -a --> List All containers which are even stopped....
 
 docker images  --> list of docker images...
 
+For more examples to get more sample, type "dockersamples" in dockerhub search area...
+
+C:\Users\kumar>docker run dockersamples/static-site
+Unable to find image 'dockersamples/static-site:latest' locally
+latest: Pulling from dockersamples/static-site
+fdd5d7827f33: Pull complete
+a3ed95caeb02: Pull complete
+716f7a5f3082: Pull complete
+7b10f03a0309: Pull complete
+aff3ab7e9c39: Pull complete
+Digest: sha256:daa686c61d7d239b7977e72157997489db49f316b9b9af3909d9f10fd28b2dec
+Status: Downloaded newer image for dockersamples/static-site:latest
+
+
+
 
 docker run -d -p 8080:80 -p 8082:443 dockersamples/static-site
 where 8080 is host port
 where 80 --> container port...So to access the static application type http://localhost:8080
+Ex:
+C:\Users\kumar>docker run -d -p 8084:80 dockersamples/static-site
+36f2dabe3819d73e61811796af89048f19770d838c3b8c7dc048d6c3927467b1
+
 
 Basically when you run the docker with "docker run -d -p 8080:80 -p 8082:443 dockersamples/static-site", this acts like a 
 temp storage...means the data will be deleted once the docker gets stopped....
+
+
+
+logout :
+
+docker logout
 
 Run the docker with mounting the volume.... 
 
