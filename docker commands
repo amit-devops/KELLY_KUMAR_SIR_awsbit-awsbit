@@ -53,11 +53,15 @@ Run the docker with mounting the volume....
 
 To stop the docker 
 
-docker stop
+docker stop <imageID>
+Ex : 
+C:\Users\kumar>docker stop 36f2dabe3819
 
-to delete the docker 
 
-docker delete 
+Delete the docker image  
+
+docker rm <imageID>
+Ex : C:\Users\kumar>docker rm 6981fcf96164
 
 
 
