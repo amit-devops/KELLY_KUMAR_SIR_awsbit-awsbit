@@ -116,5 +116,35 @@ Note : dont use the ipconfig , as it will dynamically change....
 
 ------------------------------------------------------------------------------------
 
+how to create an Docker image
+https://docs.docker.com/v17.09/engine/reference/builder/#from
+what id dockerfile?
 
+this file is mani fest file to create a docker image...
+Ex:
+---
+From openjdk:latest
+MAINTAINER kumar
+EXPOSE 9000
+EXPOSE 9090
+CMD echo "hello"
+----
+
+save it as kumar.dockerfile in /usr/home
+
+then
+
+docker build -t <imagename>:v1 PATH_TO_DOCKERFILE
+Ex : docker build -t kumarfirstimage:v1 /usr/home
+
+where kumarfirstimage:v1  --> image name : version
+--------------------------------------------------------------------------------
+how to move the docker image to the docker HUB
+docker login
+
+enter the user & password of docker hub
+
+docker tag <image name>:<version> <dockerreponame>/<imagename>:<version>
+Ex : docker tag kumarfirstimage:v1 kumarrepo/kumarfirstimage:v1
+docker push kumarrepo/kumarfirstimage:v1
 
