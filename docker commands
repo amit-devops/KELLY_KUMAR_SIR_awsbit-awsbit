@@ -121,6 +121,23 @@ https://docs.docker.com/v17.09/engine/reference/builder/#from
 what id dockerfile?
 
 this file is mani fest file to create a docker image...
+
+Learn about :
+WORKDIR /home
+RUN COMMAND1  
+RUN COMMAND2  
+MAINTAINER kumar  
+EXPOSE 9000 
+EXPOSE 9090  
+COPY /home/test.sh /home1/test.sh  
+ENV key1=value1 
+COPY test.jar /home1/test.jar
+WORKDIR /   CMD ['']
+
+
+
+
+
 Ex:
 ---
 From openjdk:latest
@@ -129,6 +146,8 @@ EXPOSE 9000
 EXPOSE 9090
 CMD echo "hello"
 ----
+
+please learn what is diffrences between entrypoint vs cmd in docker file.
 
 save it as kumar.dockerfile in /usr/home
 
