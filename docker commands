@@ -177,5 +177,7 @@ its yaml format...its like cloudformation template to create multiple dockers
 docker compose
 docker-compose up -d <path of docker compose file..>
 
+how to http vs https in containers.....
+
 
 
