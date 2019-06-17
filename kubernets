@@ -1,0 +1,9 @@
+Kubernets will host a docker container with full autoscaling, logs, security & others....
+
+
+borg is used in google & kubernets came from there...
+
+refer this link for some container tools --> www.cncf.io
+
+install this 
+https://kubernetes.io/docs/tasks/tools/install-minikube/
