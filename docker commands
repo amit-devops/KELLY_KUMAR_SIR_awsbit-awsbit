@@ -167,3 +167,15 @@ docker tag <image name>:<version> <dockerreponame>/<imagename>:<version>
 Ex : docker tag kumarfirstimage:v1 kumarrepo/kumarfirstimage:v1
 docker push kumarrepo/kumarfirstimage:v1
 
+-------------------------------
+
+docker logs
+
+sudo docker logs <containerid>
+--------------------------
+its yaml format...its like cloudformation template to create multiple dockers
+docker compose
+docker-compose up -d <path of docker compose file..>
+
+
+
