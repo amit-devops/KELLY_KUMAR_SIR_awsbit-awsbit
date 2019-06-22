@@ -1,0 +1,74 @@
+1. install awscli
+
+2. configure awscli
+
+install kops https://github.com/kubernetes/kops/releases/tag/1.12.2
+
+kops-windows-amd64
+
+
+install kubectl 
+
+Follow this document
+
+https://medium.com/containermind/how-to-create-a-kubernetes-cluster-on-aws-in-few-minutes-89dda10354f4
+
+Create a s3 bucket and enable versioning on this
+
+Create 2 envirnment variables
+
+export KOPS_CLUSTER_NAME=imesh.k8s.local
+export KOPS_STATE_STORE=s3://${bucket_name}
+
+PLease use set command
+
+create secret --name imesh.k8s.local sshpublickey admin -i D:\id_rsa.pub
+
+Create a cluster:
+
+kops create cluster node-count=2 node-size=t2.medium zones=us-east-1a name=${KOPS_CLUSTER_NAME}
+
+kops edit cluster --name ${KOPS_CLUSTER_NAME}
+
+kops update cluster --name ${KOPS_CLUSTER_NAME} --yes
+
+kops validate cluster
+
+please wait for 5-10 mins..this will create 1 master & 2 nodes servers
+
+Copy this yaml file & keep in safe location..
+
+https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml
+
+name this yaml file as dashboard.yaml
+
+Run :
+
+kubectl apply -f d:\dashboard.yaml
+
+this will install a dashboard in master server...
+
+
+kops get secrets kube --type secret -oplaintext
+
+kops get secrets admin --type secret -oplaintext
+
+Note these 2 secret information...
+
+kubectl cluster-info
+
+https://<kubernetes-master-hostname>/ui --> Enter the ELB name
+
+
+https://api-imesh-k8s-local-d8ok51-1738749934.us-east-1.elb.amazonaws.com/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
+
+Enter 
+
+user : admin
+
+password is --> enter the token which is genarated
+
+
+
+
+
