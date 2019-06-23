@@ -68,6 +68,10 @@ user : admin
 
 password is --> enter the token which is genarated
 
+To delete the Cluster :
+
+set set KOPS_STATE_STORE=s3://kbackuppublic
+kops delete cluster --name imesh.k8s.local --yes
 
 
 
