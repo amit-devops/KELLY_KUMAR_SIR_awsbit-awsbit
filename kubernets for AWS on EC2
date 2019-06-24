@@ -73,6 +73,63 @@ To delete the Cluster :
 set set KOPS_STATE_STORE=s3://kbackuppublic
 kops delete cluster --name imesh.k8s.local --yes
 
+-----------------------------------------------------------------------------
+
+KUBERNETS important resources
+namespace
+
+pod
+
+service
+
+deployment
+
+replicasets
+
+persistencyvolume
+
+daemonset
+
+stateful set
+------------------------------------------------------------------------------------------------
+Commands:
+
+kubectl get nodes
+
+kubectl get pods
+
+TO create a deployment, please refer sample yaml file....Save it in d: drive with service.yaml
+--------------------------------------
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  replicas:  # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+
+-------------------------------------------------
+
+
+kubectl apply -f <yaml files name> --> kubectl apply -f service.yaml
+
+for deleting the deployment
+
+kubectl delete -f app-nginx.yaml
+
+kubectl get pods -l app=nginx
 
 
 
